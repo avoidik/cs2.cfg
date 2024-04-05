@@ -18,5 +18,6 @@ $ docker run -d --name=cs2 \
 
 # References
 
+[Steam token](https://steamcommunity.com/dev/managegameservers)
 [joedwards32/CS2](https://github.com/joedwards32/CS2)
 [Game Modes](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive/Game_Modes)
