@@ -18,16 +18,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
         run: |
-          mkdir release
-          tar --strip-components 1 \
-              --exclude release/ \
-              --exclude .git/ \
+          tar --exclude .git/ \
               --exclude .github/ \
               --exclude README.md \
               --exclude LICENSE \
-              -zcf release/release.tar.gz .
+              --exclude release.tar.gz \
+              -zcf release.tar.gz .
           gh release create "$tag" \
               --repo="$GITHUB_REPOSITORY" \
               --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
               --generate-notes \
-              release/release.tar.gz
+              release.tar.gz
